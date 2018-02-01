@@ -1,12 +1,12 @@
 #!/usr/bin/python
 """
-@package		phantombot-quotes
-@version:		0.0.1-alpha
-@description	This script gathers all quotes from PhantomBot and updates a specified text source with a randomly ch0sen one.
-@author:		@tuc0w
-@twitch:		https://twitch.tv/tuc0w
-@twitter:		https://twitter.com/tuc0w
-@instagram:		https://instagram.com/tuc0w
+	@package		phantombot-quotes
+	@version:		0.0.1-alpha
+	@description	This script gathers all quotes from PhantomBot and updates a specified text source with a randomly ch0sen one.
+	@author:		@tuc0w
+	@twitch:		https://twitch.tv/tuc0w
+	@twitter:		https://twitter.com/tuc0w
+	@instagram:		https://instagram.com/tuc0w
 """
 
 import obspython as obs
@@ -16,10 +16,10 @@ import json
 import random
 
 url				= ""
-port			= 25004
+port			= "25004"
 interval		= 30
 source_name		= ""
-oauth       	= ""
+oauth			= ""
 data			= {}
 reveived_data	= False
 
@@ -85,11 +85,11 @@ def script_update(settings):
 	global source_name
 	global oauth
 
-	url         = obs.obs_data_get_string(settings, "url")
-	port        = obs.obs_data_get_string(settings, "port")
-	interval    = obs.obs_data_get_int(settings, "interval")
-	source_name = obs.obs_data_get_string(settings, "source")
-	oauth       = obs.obs_data_get_string(settings, "oauth")
+	url			= obs.obs_data_get_string(settings, "url")
+	port		= obs.obs_data_get_string(settings, "port")
+	interval	= obs.obs_data_get_int(settings, "interval")
+	source_name	= obs.obs_data_get_string(settings, "source")
+	oauth		= obs.obs_data_get_string(settings, "oauth")
 
 	obs.timer_remove(update_text)
 
